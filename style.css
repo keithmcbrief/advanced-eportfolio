@@ -347,6 +347,14 @@ nav {
   transform: translateX(-110%);
 }
 
+.modal__title--about {
+  margin-bottom: 20px;
+}
+
+.techstack {
+  margin-top: 20px;
+}
+
 .modal__languages {
   display: flex;
   flex-wrap: wrap;
