@@ -371,7 +371,8 @@ nav {
 }
 
 .css__wrapper {
-  padding: 18px;
+  padding: 20px;
+  transform: translateY(-3px);
 }
 
 .modal__language--img {
@@ -508,6 +509,7 @@ nav {
 .project__img {
   width: 100%;
   transition: all 600ms ease;
+  transform: scale(1.02);
 }
 
 .project__wrapper {
