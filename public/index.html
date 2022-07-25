@@ -1,314 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yuri Jew</title>
-    <link rel="stylesheet" href="../style.css" />
-    <script src="../app.js" defer></script>
-    <script
-      src="https://kit.fontawesome.com/21a9ab59a8.js"
-      crossorigin="anonymous"
-    ></script>
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-   (function(){
-      emailjs.init("pnIbggByy1mNOQtXS");
-   })();
-</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.1/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.1/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.9.1/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.9.1/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.9.1/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.9.1/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.9.1/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.9.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.9.1/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.9.1/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
   </head>
   <body>
-    <section id="landing-page" onmousemove="moveBackground(event)">
-      <nav>
-        <figure>
-          <img id="personal-logo" src="../assets/logo2.png" alt="" />
-        </figure>
-        <ul class="nav__link--list">
-          <li class="nav__link">
-            <a
-              href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleModal()">About
-            </a>
-          </li>
-          <li class="nav__link">
-            <a
-              href="#projects"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects
-            </a>
-          </li>
-          <li class="nav__link">
-            <a
-              href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleModal()">Contact</a>
-          </li>
-          <li class="nav__link click" onclick="toggleContrast()">
-            <a
-              href="#"
-              class="nav__link--anchor link__hover-effect link__hover--black"><i class="fa-solid fa-circle-half-stroke"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <header class="header">
-        <div class="header__content">
-          <h1 class="title">Hey</h1>
-          <h1 class="title secondary">I'm Yuri.</h1>
-          <p class="header__para">
-            I'm a <b class="secondary">Freelance Frontend Developer</b>
-            who is self-driven and passionate about building websites that provide a great user experience.
-            <br />
-            Here's a bit more <b class="secondary click link__hover-effect link__hover-effect--secondary" onclick="toggleModal()">about me.</b>
-          </p>
-          <div class="social__list">
-            <a href="https://www.linkedin.com/in/yuri-jew-a936a623b/" target="_blank" class="social__link click">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/keithmcbrief" target="_blank" class="social__link click">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a
-              href="../assets/finalresume.pdf"
-              target="_blank"
-              class="social__link click"
-            >
-              <i class="fa-solid fa-file-pdf"></i>
-            </a>
-          </div>
-        </div>
-      </header>
-      <a href="#">
-        <button class="mail__btn click" onclick="toggleModal()">
-          <i class="fa-solid fa-envelope"></i>
-        </button>
-      </a>
-      <a href="#projects" class="scroll">
-        <div class="scroll__icon click"></div>
-      </a>
-
-      <div class="modal">
-        <div class="modal__half modal__about">
-            <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
-            <p class="modal__para">I'm a <b class="secondary">frontend software engineer</b> with a strong passion for
-                 solving difficult problems, working with others, and developing websites with great <b class="secondary">user experiences.</b>
-                 <br>
-                </p>
-            <p class="modal__para">I worked in a <b class="secondary">professional team environment</b> as an esports athlete for 6+ years.
-                 Through my strong <b class="secondary">leadership</b> and <b class="secondary">communication</b> skills I was able to push my team to the highest level.
-                 <br>
-                </p>
-
-                <div class="techstack">
-                  <h3 class="modal__title modal__title--about">My tech stack:</h3>
-                  <div class="modal__languages">
-                    <figure class="modal__language">
-                      <img class="modal__language--img" src="../assets/htmlicon.jpg" alt="">
-                      <span class="language__name">HTML</span>
-                    </figure>
-                    <figure class="modal__language css__wrapper">
-                      <img class="modal__language--img" src="../assets/css.png" alt="">
-                      <span class="language__name">CSS</span>
-                    </figure>
-                    <figure class="modal__language">
-                    <img class="modal__language--img" src="../assets/javascript.png" alt="">
-                    <span class="language__name">JavaScript</span>
-                  </figure>
-                  <figure class="modal__language">
-                    <img class="modal__language--img" src="../assets/react.png" alt="">
-                    <span class="language__name">React</span>
-                  </figure>
-                </div>
-                </div>
-        </div>
-        <div class="modal__half modal__contact">
-          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
-          <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
-          <h3 class="modal__sub-title modal__sub-title--contact">I'm currently open to new opportunities.</h3>
-          <form id="contact__form" onsubmit="contact(event)">
-            <div class="form__item">
-              <label class="form__item--label">Name</label>
-              <input class="input" name="user_name" type="text" required></input>
-            </div>
-            <div class="form__item">
-              <label class="form__item--label">Email</label>
-              <input class="input" name="user_email" type="email" required></input>
-            </div>
-            <div class="form__item">
-              <label class="form__item--label">Message</label>
-              <textarea class="input" name="message" type="text" required></textarea>
-            </div>
-            <button id="contact__submit" class="form__submit">
-              Send it my way
-            </button>
-          </form>
-          <div class="modal__overlay modal__overlay--loading">
-            <i class="fas fa-spinner"></i>
-          </div>
-          <div class="modal__overlay modal__overlay--success">
-            Thanks for the message! Looking forward to speaking to you soon.
-          </div>
-        </div>
-      </div>
-      <img src="../assets/semi circle.svg" class="shape shape--0">
-      <img src="../assets/circle.svg" class="shape shape--1">
-      <img src="../assets/squiggly.svg" class="shape shape--2">
-      <img src="../assets/circle.svg" class="shape shape--3">
-      <img src="../assets/triangle.svg" class="shape shape--4">
-      <img src="../assets/circle.svg" class="shape shape--5">
-      <img src="../assets/squiggly.svg" class="shape shape--6">
-      <img src="../assets/circle.svg" class="shape shape--7">
-      <img src="../assets/semi circle.svg" class="shape shape--8">
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <div class="row">
-                <h1 class="section__title">Here are some of my<span class="secondary"> projects</b></h1>
-                <ul class="project__list">
-                    <li class="project">
-                        <div class="project__wrapper">
-                            <img src="../assets/project1img.png" class="project__img" alt="">
-                            <div class="project__wrapper--bg"></div>
-                            <div class="project__description">
-                                <h3 class="project__description--title">
-                                    Commercial Landing Page
-                                </h3>
-                                <h4 class="project__description--sub-title">
-                                    Html, CSS, JavaScript
-                                </h4>
-                                <p class="project__description--para">
-                                  Designed, developed and hosted my client’s website using semantic HTML5 and CSS3 (+BEM) best practices.
-                                </p>
-                                <p class="project__description--para">
-                                    Delivered responsiveness and multi-platform functionality.
-                                </p>
-                                <div class="project__description--links">
-                                    <a href="https://github.com/keithmcbrief/landing" class="project__description--link">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                    <a href="https://keithmcbrief.github.io/landing/" class="project__description--link">
-                                      <i class="fas fa-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="project">
-                        <div class="project__wrapper">
-                            <img src="../assets/project2img.png" class="project__img" alt="">
-                            <div class="project__wrapper--bg"></div>
-                            <div class="project__description">
-                                <h3 class="project__description--title">
-                                    Twitter Clone (Side Project)
-                                </h3>
-                                <h4 class="project__description--sub-title">
-                                    Html, CSS, JavaScript, React, NextJS, Firebase
-                                </h4>
-                                <p class="project__description--para">
-                                  Implemented Google Sign-In user authentication using NextAuth.Js to display the user’s name and profile picture.
-                                  
-                                  
-                                </p>
-                                <p class="project__description--para">
-                                  Implemented posting Tweets, commenting and liking functionality. 
-                                  Stored user generated data in Firebase.
-                                  Developed and made fully responsive using React, JavaScript, HTML, and CSS best practices.
-                                  
-                                </p>
-                                <div class="project__description--links">
-                                    <a href="https://github.com/keithmcbrief/twitter-clone2" class="project__description--link">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                    <a href="http://twitter-clone2-self.vercel.app/" class="project__description--link">
-                                      <i class="fas fa-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="project">
-                        <div class="project__wrapper">
-                            <img src="../assets/project3img.png" class="project__img" alt="">
-                            <div class="project__wrapper--bg"></div>
-                            <div class="project__description">
-                                <h3 class="project__description--title">
-                                    E-Portfolio (Freelance)
-                                </h3>
-                                <h4 class="project__description--sub-title">
-                                    Html, CSS, JavaScript
-                                </h4>
-                                <p class="project__description--para">
-                                    Designed, developed and hosted my client’s e-portfolio using semantic HTML5 and CSS3 (+BEM) best practices. 
-                                    
-                                </p>
-                                <p class="project__description--para">
-                                    Provided support for search engine optimisation for higher indexing through Google’s search engine crawler.
-                                    
-                                </p>
-                                <p class="project__description--para">
-                                    Included responsive and multi-platform support to enable the portfolio to be viewed on any platform and device.
-                                    
-                                </p>
-                                <div class="project__description--links">
-                                    <a href="https://github.com/keithmcbrief/eportfoilio" class="project__description--link">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                    <a href="https://keithmcbrief.github.io/eportfoilio/" class="project__description--link">
-                                      <i class="fas fa-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>        
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <div class="row footer__row">
-            <figure class="footer__logo">
-                <img class="footer__logo--img" src="./assets/logo2.png" alt="">
-            </figure>
-            <div class="footer__social--list">
-                <a href="https://github.com/keithmcbrief" class="
-                footer__social--link
-                link__hover-effect
-                link__hover-effect--white
-                " target="_blank">
-                Github
-                </a>
-                <a href="https://www.linkedin.com/in/yuri-jew-a936a623b/" class="
-                footer__social--link
-                link__hover-effect
-                link__hover-effect--white
-                " target="_blank">
-                LinkedIn
-                </a>
-                <a href="" class="
-                footer__social--link
-                link__hover-effect
-                link__hover-effect--white
-                " onclick="toggleModal()">
-                Contact
-                </a>
-                <a href="../assets/finalresume.pdf" class="
-                footer__social--link
-                link__hover-effect
-                link__hover-effect--white
-                " target="_blank">
-                Resume
-                </a>
-            </div>
-            <div class="footer__copyright">
-                Copyright &copy; 2022 Yuri Jew
-            </div>
-        </div>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
     </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
   </body>
 </html>
